@@ -1,11 +1,9 @@
-type lookupOptions
-@obj
-external lookupOptions: (
-  ~family: int=?,
-  ~hints: int=?,
-  ~all: bool=?,
-  ~verbatim: bool=?,
-) => lookupOptions = ""
+type lookupOptions = {
+  family?: int,
+  hints?: int,
+  all?: bool,
+  verbatim?: bool,
+}
 @module("dns") @scope("promise")
 external lookup: string => Js.Promise.t<array<{"address": string, "family": int}>> = "lookup"
 @module("dns") @scope("promise")

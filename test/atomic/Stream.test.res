@@ -26,10 +26,7 @@ zoraBlock("Stream.Readable", t => {
         let stream = StreamTestLib.makeReadableEmpty()->Stream.onError(
           err => {
             t->equal(err, dummyError, "")
-
-            // oh these bindings are wonderful aren't they
-            let a = ()
-            resolve(a)
+            resolve()
           },
         )
 
@@ -91,9 +88,7 @@ zoraBlock("Stream.Writable", t => {
               }
               t->equal(actual, Some((true, true, true, true)), "")
 
-              // oh these bindings are wonderful aren't they
-              let a = ()
-              resolve(a)
+              resolve()
             },
             (),
           )->ignore

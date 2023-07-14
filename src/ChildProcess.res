@@ -2,37 +2,37 @@ type t
 
 module Events = {
   @send
-  external onData: (t, @as("data") _, @uncurry (Buffer.t => unit)) => t = "on"
+  external onData: (t, @as("data") _, @uncurry Buffer.t => unit) => t = "on"
   @send
-  external onDisconnect: (t, @as("disconnect") _, @uncurry (unit => unit)) => t = "on"
+  external onDisconnect: (t, @as("disconnect") _, @uncurry unit => unit) => t = "on"
   @send
-  external onError: (t, @as("error") _, @uncurry (Js.Exn.t => unit)) => t = "on"
+  external onError: (t, @as("error") _, @uncurry Js.Exn.t => unit) => t = "on"
   @send
-  external onExit: (t, @as("exit") _, @uncurry (int => unit)) => t = "on"
+  external onExit: (t, @as("exit") _, @uncurry int => unit) => t = "on"
   @send
-  external onClose: (t, @as("close") _, @uncurry (int => unit)) => t = "on"
+  external onClose: (t, @as("close") _, @uncurry int => unit) => t = "on"
 
   @send
-  external offData: (t, @as("data") _, @uncurry (Buffer.t => unit)) => t = "off"
+  external offData: (t, @as("data") _, @uncurry Buffer.t => unit) => t = "off"
   @send
-  external offDisconnect: (t, @as("disconnect") _, @uncurry (unit => unit)) => t = "off"
+  external offDisconnect: (t, @as("disconnect") _, @uncurry unit => unit) => t = "off"
   @send
-  external offError: (t, @as("error") _, @uncurry (Js.Exn.t => unit)) => t = "off"
+  external offError: (t, @as("error") _, @uncurry Js.Exn.t => unit) => t = "off"
   @send
-  external offExit: (t, @as("exit") _, @uncurry (int => unit)) => t = "off"
+  external offExit: (t, @as("exit") _, @uncurry int => unit) => t = "off"
   @send
-  external offClose: (t, @as("close") _, @uncurry (int => unit)) => t = "off"
+  external offClose: (t, @as("close") _, @uncurry int => unit) => t = "off"
 
   @send
-  external onDataOnce: (t, @as("data") _, @uncurry (Buffer.t => unit)) => t = "once"
+  external onDataOnce: (t, @as("data") _, @uncurry Buffer.t => unit) => t = "once"
   @send
-  external onDisconnectOnce: (t, @as("disconnect") _, @uncurry (unit => unit)) => t = "once"
+  external onDisconnectOnce: (t, @as("disconnect") _, @uncurry unit => unit) => t = "once"
   @send
-  external onErrorOnce: (t, @as("error") _, @uncurry (Js.Exn.t => unit)) => t = "once"
+  external onErrorOnce: (t, @as("error") _, @uncurry Js.Exn.t => unit) => t = "once"
   @send
-  external onExitOnce: (t, @as("exit") _, @uncurry (int => unit)) => t = "once"
+  external onExitOnce: (t, @as("exit") _, @uncurry int => unit) => t = "once"
   @send
-  external onCloseOnce: (t, @as("close") _, @uncurry (int => unit)) => t = "once"
+  external onCloseOnce: (t, @as("close") _, @uncurry int => unit) => t = "once"
 
   @send
   external emitData: (t, @as("data") _, Buffer.t) => bool = "emit"
